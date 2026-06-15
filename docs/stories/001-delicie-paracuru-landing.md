@@ -34,6 +34,7 @@ Criar uma landing page premium, responsiva, emocional e focada em gerar pedidos 
 - [x] Projeto preparado para execução local
 - [x] Projeto preparado para deploy estatico na Vercel
 - [x] Dist otimizada para drag-and-drop na Vercel
+- [x] Build separado para Vercel Linux e otimizacao local Windows
 - [x] `npm run lint`
 - [x] `npm run typecheck`
 - [x] `npm test`
