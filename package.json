@@ -1,0 +1,13 @@
+{
+  "name": "delicie-paracuru-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page premium da Delicie Paracuru.",
+  "scripts": {
+    "build": "node scripts/build-static.js && powershell -ExecutionPolicy Bypass -File scripts/optimize-dist-images.ps1",
+    "start": "node scripts/server.js",
+    "lint": "node scripts/check-files.js",
+    "typecheck": "node scripts/check-files.js",
+    "test": "node scripts/check-files.js"
+  }
+}
