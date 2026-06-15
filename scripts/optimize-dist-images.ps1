@@ -2,7 +2,8 @@ Add-Type -AssemblyName System.Drawing
 
 $ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
-$dist = Join-Path $root "dist"
+$outputName = if ($args.Count -gt 0) { $args[0] } else { "dist" }
+$dist = Join-Path $root $outputName
 
 function Get-Encoder($mimeType) {
   return [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() |
@@ -97,4 +98,4 @@ foreach ($item in $optimizations) {
   Resize-Image $item.Path $item.Width $item.Height $item.Quality
 }
 
-Write-Host "Imagens da dist otimizadas."
+Write-Host "Imagens de $outputName otimizadas."

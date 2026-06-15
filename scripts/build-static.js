@@ -3,12 +3,12 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
 const root = path.resolve(__dirname, "..");
-const dist = path.join(root, "dist");
+const outputName = process.argv[2] || "dist";
+const output = path.join(root, outputName);
 const files = [
   "index.html",
   "styles.css",
   "script.js",
-  "vercel.json",
   path.join("assets", "favicon-delicie.png"),
   path.join("assets", "logo-delicie.png"),
   path.join("assets", "delicie-ganache-drip.png"),
@@ -28,6 +28,10 @@ const files = [
   path.join("FOTOS-DELICIE", "hero-bolo-delicie-real.jpg")
 ];
 
+if (outputName === "dist") {
+  files.push("vercel.json");
+}
+
 const check = spawnSync(process.execPath, [path.join(root, "scripts", "check-files.js")], {
   cwd: root,
   stdio: "inherit"
@@ -37,13 +41,13 @@ if (check.status !== 0) {
   process.exit(check.status || 1);
 }
 
-fs.rmSync(dist, { recursive: true, force: true });
-fs.mkdirSync(dist, { recursive: true });
+fs.rmSync(output, { recursive: true, force: true });
+fs.mkdirSync(output, { recursive: true });
 
 for (const file of files) {
-  const target = path.join(dist, file);
+  const target = path.join(output, file);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.copyFileSync(path.join(root, file), target);
 }
 
-console.log(`Build estatico pronto em ${path.relative(root, dist)}.`);
+console.log(`Build estatico pronto em ${path.relative(root, output)}.`);

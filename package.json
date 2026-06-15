@@ -5,7 +5,9 @@
   "description": "Landing page premium da Delicie Paracuru.",
   "scripts": {
     "build": "node scripts/build-static.js",
+    "build:vercel": "node scripts/check-files.js",
     "build:local": "node scripts/build-static.js && powershell -ExecutionPolicy Bypass -File scripts/optimize-dist-images.ps1",
+    "build:public": "node scripts/build-static.js public && powershell -ExecutionPolicy Bypass -File scripts/optimize-dist-images.ps1 public",
     "start": "node scripts/server.js",
     "lint": "node scripts/check-files.js",
     "typecheck": "node scripts/check-files.js",

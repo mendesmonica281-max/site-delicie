@@ -1,7 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:vercel",
   "cleanUrls": true,
-  "outputDirectory": "dist",
+  "outputDirectory": "public",
   "trailingSlash": false,
   "headers": [
     {

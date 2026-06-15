@@ -35,6 +35,7 @@ Criar uma landing page premium, responsiva, emocional e focada em gerar pedidos 
 - [x] Projeto preparado para deploy estatico na Vercel
 - [x] Dist otimizada para drag-and-drop na Vercel
 - [x] Build separado para Vercel Linux e otimizacao local Windows
+- [x] Pasta public versionada para deploy GitHub na Vercel
 - [x] `npm run lint`
 - [x] `npm run typecheck`
 - [x] `npm test`
@@ -46,6 +47,11 @@ Criar uma landing page premium, responsiva, emocional e focada em gerar pedidos 
 - `script.js`
 - `package.json`
 - `vercel.json`
+- `public/index.html`
+- `public/styles.css`
+- `public/script.js`
+- `public/assets/`
+- `public/FOTOS-DELICIE/`
 - `scripts/build-static.js`
 - `scripts/optimize-dist-images.ps1`
 - `scripts/check-files.js`
